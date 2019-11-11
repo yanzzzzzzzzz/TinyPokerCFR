@@ -1,0 +1,10 @@
+
+CHANCE = "CHANCE"
+
+CHECK = "CHECK"
+CALL = "CALL"
+FOLD = "FOLD"
+BET = "BET"
+
+A = 1
+B = -A
