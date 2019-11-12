@@ -1,7 +1,5 @@
 # TinyPokerCFR
 使用自定義的德州撲克遊戲進行CFR訓練並驗證成果
-## Getting Started
-
 
 ## Running the tests
 在`config.py`檔案中,可自行定義撲克牌數量與花色
