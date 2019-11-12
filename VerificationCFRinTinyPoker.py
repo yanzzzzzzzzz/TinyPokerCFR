@@ -10,6 +10,8 @@ with open(dataPath+"CARDS_DEALINGS num"+str(len(hands))+",rank"+str(len(handRank
 
 #load cfr strategy
 CFRFilePath = 'iters'
+#預設P1為經過數次訓練的Bot
+#P2完全隨機決策的bot
 P1CFR_fileName = CFRFilePath + '/sampling_cfr_iter10000final.npy'
 P2CFR_fileName = CFRFilePath + '/sampling_cfr_iter0.npy'
 P1CFRStrategy = np.load(P1CFR_fileName).item()
