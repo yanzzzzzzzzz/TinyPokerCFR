@@ -3,8 +3,7 @@
 #第二回合翻三張公共牌
 #公共牌經排序後不重複
 from config import hands,handRanks,dataPath
-import time
-import os
+from lib.common import createFolder
 def createHands(hands,handRanks):
     allPoker =[]
     for hand in hands:
@@ -23,13 +22,6 @@ def reomveArrayValue(removeValueArray):
     for rm in removeValueArray:
         arr.pop(arr.index(rm))
     return arr
-def createFolder(directory):
-    try:
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-    except OSError:
-        print ('Error: Creating directory. ' +  directory)
-       
 
 def createData():
     # 產生data存放的資料夾

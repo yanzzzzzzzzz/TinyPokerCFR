@@ -120,10 +120,10 @@ class ChanceSamplingCFR(CounterfactualRegretMinimizationBase):
     def __init__(self, root):
         super().__init__(root = root, chance_sampling = True)
 
-    def run(self, iterations = 1):
+    def run(self, iterations,save_path):
         for iteration in range(0, iterations):
             if iteration%100 ==0:
                 print(iteration)
             if iteration%200000 ==0:
-                np.save('iter/sampling_cfr_iter'+str(iteration)+'.npy', self.sigma) 
+                np.save(save_path+'sampling_cfr_iter'+str(iteration)+'.npy', self.sigma) 
             self._cfr_utility_recursive(self.root, 1, 1)
