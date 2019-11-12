@@ -80,8 +80,9 @@ with open(dataPath+"CARDS_DEALINGS num"+str(len(hands))+",rank"+str(len(handRank
         CARDS_DEALINGS.append(str(line.strip()))
 
 #載入CFR策略
-P1CFR_fileName = 'iter/sampling_cfr_iter10000final.npy'
-P2CFR_fileName = 'iter/sampling_cfr_iter0.npy'
+CFRFilePath = 'iters'
+P1CFR_fileName = CFRFilePath + '/sampling_cfr_iter10000final.npy'
+P2CFR_fileName = CFRFilePath + '/sampling_cfr_iter0.npy'
 P1CFRStrategy = np.load(P1CFR_fileName).item()
 P2CFRStrategy = np.load(P2CFR_fileName).item()
 #紀錄玩家金錢量,起始手牌勝負,最終勝負
