@@ -4,6 +4,7 @@
 #公共牌經排序後不重複
 from config import hands,handRanks,dataPath
 import time
+import os
 def createHands(hands,handRanks):
     allPoker =[]
     for hand in hands:
@@ -22,7 +23,17 @@ def reomveArrayValue(removeValueArray):
     for rm in removeValueArray:
         arr.pop(arr.index(rm))
     return arr
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
+       
+
 def createData():
+    # 產生data存放的資料夾
+    createFolder('./data/')
     #2h,2s,3h,3s....由小排到大
     allPoker_ =createHands(hands,handRanks)
     pokerTotal = len(allPoker_)
