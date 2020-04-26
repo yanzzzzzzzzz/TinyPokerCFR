@@ -1,6 +1,11 @@
 # TinyPokerCFR
 使用自定義的德州撲克遊戲進行CFR訓練並驗證成果
-
+## 演算法
+Counterfactual Regret Minimization 
+概念
+* 自我學習 + 遊戲樹
+* 遊戲樹代表遊戲中所有可能的動作,任意的動作可能會串接下一個對手相應的動作直到遊戲結束
+* 透過不斷迭代進行後悔值更新,直到趨近於Nash equilibrium(納許均衡)
 ## Running the tests
 在`config.py`檔案中,可自行定義撲克牌數量與花色
 
@@ -26,9 +31,9 @@ run VerificationCFRinTinyPoker.py
 run VerificationCFRinNormalPoker.py
 ```
 ## Result 
-CFR策略迭代次數:$10^6$
-隨機策略:所有策略全部隨機
-測試遊戲局數:100000局
+* CFR策略迭代次數:$10^6$
+* 測試方法:全隨機策略BOT vs CFR訓練後的BOT
+* 測試遊戲局數:100000局
 ### Tiny poker 下遊戲結果
 #### 隨機策略先動作情況下
 | BOT | RTP |
@@ -36,3 +41,11 @@ CFR策略迭代次數:$10^6$
 | CFR策略| 1.2036 |
 | 隨機策略 | 0.7964 |
 
+## 待修改部分
+* 整理程式碼
+* 加入其他動作(Ex:下注1,10,100元)
+* 手牌抽象化處理
+* 動作抽象化處理
+
+## Reference
+https://github.com/int8/counterfactual-regret-minimization
